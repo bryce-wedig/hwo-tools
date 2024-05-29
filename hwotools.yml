@@ -1,17 +1,17 @@
-name: hwotools
+name: hwo
 channels:
   - conda-forge
   - http://ssb.stsci.edu/astroconda
   - defaults
 dependencies:
-  - bokeh=3.4.1
-  - astropy=6.0.1
-  - specutils=1.14.0
   - numpy=1.26.4
-  - pandas=2.2.2
   - scipy=1.13.0
   - setuptools=69.5.1
-  - jupyter=1.0.0
+  - jupyter
+  - pip
   - pip:
       - pysynphot==2.0.0
-prefix: /Users/tumlinson/anaconda3/envs/hwotools
+      - bokeh==3.4.1
+      - astropy==6.0.1
+      - specutils==1.14.0
+      - pandas==2.2.2
