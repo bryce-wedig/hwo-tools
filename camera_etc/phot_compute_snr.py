@@ -3,6 +3,16 @@ from __future__ import print_function
 import numpy as np
 import astropy.constants as const
 
+
+def get_psf_fwhm(telescope, camera):
+    diff_limit = 1.22*(500.*0.000000001)*206264.8062/telescope.aperture
+
+    fwhm_psf = 1.22 * camera.pivotwave * 0.000000001 * 206264.8062 / telescope.aperture
+    fwhm_psf[fwhm_psf < diff_limit] = fwhm_psf[fwhm_psf < diff_limit] * 0.0 + diff_limit
+
+    return fwhm_psf
+
+
 def compute_snr(telescope, camera, exposure_in_hours, ab_magnitudes):
 
     diff_limit = 1.22*(500.*0.000000001)*206264.8062/telescope.aperture
