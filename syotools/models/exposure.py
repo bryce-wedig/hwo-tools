@@ -178,9 +178,9 @@ class Exposure(PersistentModel):
         self._sed = pre_encode(SpectralLibrary.get(new_sed_id, SpectralLibrary.fab))
         self.calculate()
         
-    def renorm_sed(self, new_mag, bandpass='johnson,v'):
+    def renorm_sed(self, new_mag, bandpass='johnson,v', force=False):
         sed = self.recover('_sed')
-        self._sed = renorm_sed(sed, pre_decode(new_mag), bandpass=bandpass)
+        self._sed = renorm_sed(sed, pre_decode(new_mag), bandpass=bandpass, force=force)
         self.calculate()
     
     @property

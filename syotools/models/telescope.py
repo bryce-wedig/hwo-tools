@@ -72,8 +72,8 @@ class Telescope(PersistentModel):
         self.spectrographs.append(spectrograph)
         spectrograph.telescope = self
 
-    def set_from_json(self,name): 
-        print('Setting Telescope to: ', name) 
+    def set_from_json(self,name, show=True): 
+        if show: print('Setting Telescope to: ', name) 
         
         if ('EAC1' in name): tel = read_json.eac1()
         if ('EAC2' in name): tel = read_json.eac2()

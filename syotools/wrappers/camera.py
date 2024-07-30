@@ -16,7 +16,7 @@ def camera_snr(telescope, template, mag, exptime):
     hri_exp.renorm_sed(mag * u.ABmag, bandpass='r')
     exptime_list = []
     for i in hri.bandnames: exptime_list.append(exptime) 
-    hri_exp.exptime[1]['value'] = exptime_list 
+    hri_exp.exptime[1]['value'] = exptime_list
 
     #Print the current template & mode
     print("Current SED template: {}".format(hri_exp.sed_id)) 
